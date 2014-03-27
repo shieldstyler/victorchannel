@@ -4,6 +4,7 @@ Victorchannel::Application.routes.draw do
 
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
+#  match '/settings', to: 'user#edit', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/legal', to: 'static_pages#legal', via: 'get'
