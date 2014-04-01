@@ -1,2 +1,13 @@
 - provide(:title, @user.name)
-%h1= @user.name
+.row
+  %aside.span4
+    %section
+      %h1
+        //= gravatar_for @user
+        = @user.name
+  .span8
+    - if @user.comments.any?
+      %h3
+        Comments (#{@user.comments.count})
+      %ol.comments= render @comments
+      = will_paginate @comments

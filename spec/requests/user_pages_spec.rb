@@ -8,7 +8,7 @@ describe "User pages" do
 
     let(:user) { FactoryGirl.create(:user) }
 
-    before do
+    before(:each) do
       sign_in user
       visit users_path
     end
@@ -16,9 +16,17 @@ describe "User pages" do
     it { should have_title('All users') }
     it { should have_content('All users') }
 
-    it "should list each user" do
-      User.all.each do |user|
-        expect(page).to have_selector('li', text: user.name)
+    describe "pagination" do
+
+      before(:all) { 30.times { FactoryGirl.create(:user) } }
+      after(:all)  { User.delete_all }
+
+      it { should have_selector('div.pagination') }
+
+      it "should list each user" do
+        User.paginate(page: 1).each do |user|
+          expect(page).to have_selector('li', text: user.name)
+        end
       end
     end
 
@@ -46,10 +54,19 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:c1) { FactoryGirl.create(:comment, user: user, content: "Foo") }
+    let!(:c2) { FactoryGirl.create(:comment, user: user, content: "Bar") }
+
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+
+    describe "comments" do
+      it { should have_content(c1.content) }
+      it { should have_content(c2.content) }
+      it { should have_content(user.comments.count) }
+    end
   end
 
   describe "signup page" do
