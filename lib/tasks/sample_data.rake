@@ -22,7 +22,9 @@ namespace :db do
     users = User.all(limit: 6)
     50.times do
       content = Faker::Lorem.sentence(5)
-      users.each { |user| user.comments.create!(content: content) }
+      users.each { |user| user.comments.create!(content: content, article_id: 1) }
     end
+    Author.create!(name: "Example Author")
+    Article.create!(author_id: 1, title: "TestArticle1", published: Date.today, edited: Date.tomorrow)
   end
 end

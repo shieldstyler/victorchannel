@@ -11,6 +11,17 @@ FactoryGirl.define do
   end
   factory :comment do
     sequence(:content) { |n| "Lorem ipsum"}
+    article_id 1
     user
+  end
+  factory :author do
+    sequence(:name)  { |n| "Authorr #{n}" }
+  end
+  factory :article do
+    author
+    title "TestArticle1"
+    #sequence(:title)  { |n| "Titlee #{n}" }
+    published Date.yesterday
+    edited Date.today
   end
 end

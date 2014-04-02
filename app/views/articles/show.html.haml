@@ -1,0 +1,8 @@
+- provide(:title, @article.title)
+
+.h1 #{@article.title}
+.h3 By #{@article.author.name}
+.h3 Published: #{@article.published}
+.h3 Last Updated: #{@article.edited}
+
+= render "articles/article#{@article.id}"
