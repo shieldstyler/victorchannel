@@ -2,16 +2,35 @@ require 'spec_helper'
 
 describe "Article Pages" do
 
-
   subject { page }
 
-  it "should have the correct article title" do
-    let!(:author) { FactoryGirl.create(:author)}
-    let!(:article) { FactoryGirl.create(:article, author: author, published: Date.yesterday, edited: Date.today) }
+  describe "Author" do
+
+    let!(:author) {FactoryGirl.create(:author) }
+    let(:article) {FactoryGirl.create(:article, author_id: 1) } #should have dynamic build
 
     before { visit article_path(article) }
 
-    it { should have_content(article.title) }
-    it { should have_content(author.name)}
+    it { should have_content article.author.name }
+    it { should have_content article.title }
+    it { should have_title(full_title(article.title)) }
+  end
+
+  describe "Comments" do
+    let!(:author) {FactoryGirl.create(:author) }
+    let!(:article) {FactoryGirl.create(:article, author_id: 1) } #should have dynamic build
+    let!(:user) {FactoryGirl.create(:user) }
+    let(:c1) {FactoryGirl.create(:comment, article_id: 1, user_id: 1 ) } #should have dynamic build
+
+    before { visit article_path(article) }
+
+    it { should have_content(c1.content) }
+    it { should have_content (article.title) }
+
   end
 end
+
+
+
+
+
