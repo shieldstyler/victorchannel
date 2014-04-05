@@ -7,6 +7,6 @@
 = render "articles/article#{@article.id}"
 %h3
   Comments (#{@article.comments.count})
-= render 'shared/comment_form'
+= render 'shared/comment_form', article: @article
 %ol.comments= render @comments
 = will_paginate @comments

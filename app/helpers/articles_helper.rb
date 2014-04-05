@@ -1,5 +1,5 @@
 module ArticlesHelper
   def current_article
-    @article ||= Article.find(params[:id]))
+    @article ||= Article.find(params[:id])
   end
 end

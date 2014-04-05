@@ -1,8 +1,10 @@
 Victorchannel::Application.routes.draw do
   resources :users
-  resources :articles
+  resources :articles do
+    resources :comments    #, only: [:create, :destroy]
+  end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :comments    #, only: [:create, :destroy]
+
 
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
