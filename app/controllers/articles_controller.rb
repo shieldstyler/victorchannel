@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
 
   def show
-    @article = Article.find(params[:id])
+    store_location
+    current_article = Article.find(params[:id])
     @comments = @article.comments.paginate(page: params[:page])
+    @comment = Comment.new
   end
 
+  def index
+  end
 end

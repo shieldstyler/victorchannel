@@ -13,7 +13,7 @@ FactoryGirl.define do
     name "TestAuthor"
   end
   factory :article do
-    author_id 1
+    author
     title "TestArticle1"
     #sequence(:title)  { |n| "Titlee #{n}" }
     published Date.yesterday
@@ -21,7 +21,7 @@ FactoryGirl.define do
   end
   factory :comment do
     content "Lorem ipsum"
-    article_id 1
-    user_id 1
+    article
+    user
   end
 end

@@ -26,5 +26,6 @@ namespace :db do
     end
     Author.create!(name: "Example Author")
     Article.create!(author_id: 1, title: "TestArticle1", published: Date.today, edited: Date.tomorrow)
+    Article.create!(author_id: 1, title: "TestArticle2", published: Date.today, edited: Date.tomorrow)
   end
 end
