@@ -15,7 +15,11 @@ describe "Article Pages" do
   it { should have_content article.author.name }
   it { should have_content article.title }
   it { should have_title(full_title(article.title)) }
-  it { should have_content (c1.content) }
-  it { should have_content (article.title) }
-  it { should have_content "Comments" }
+
+  describe "Comments" do
+
+    it { should have_content (c1.content) }
+    it { should have_content (article.title) }
+    it { should have_content "Comments" }
+    end
 end

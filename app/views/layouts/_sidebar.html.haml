@@ -1,0 +1,6 @@
+%h2
+  Recent Articles
+%ul
+  - Article.all.each do |article|
+    %li
+      =link_to article.title, article

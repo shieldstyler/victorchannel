@@ -82,6 +82,19 @@ p {
   text-decoration: none;
 }
 
+/* sidebar */
+
+.sidebar {
+  padding-left: 20px;
+  padding-right: 15px;
+  float: left;
+  ul {
+    text-align: left;
+    list-style-type: none;
+    }
+  h2 {}
+}
+
 /* footer */
 
 footer {
