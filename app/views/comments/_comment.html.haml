@@ -1,4 +1,5 @@
 %li
+  %h4= comment.user.name
   %span.content= comment.content
   %span.timestamp
     Posted #{time_ago_in_words(comment.created_at)} ago.

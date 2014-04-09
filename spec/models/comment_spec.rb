@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Comment do
 
   let(:user) { FactoryGirl.create(:user) }
-  before { @comment = user.comments.build(content: "Lorem ipsum") }
+  before { @comment = user.comments.build(content: "loremipsum", article_id: 1) }
 
   subject { @comment }
 

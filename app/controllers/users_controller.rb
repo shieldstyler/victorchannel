@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the VictorChannel!"
       redirect_to @user
     else
@@ -52,13 +53,6 @@ class UsersController < ApplicationController
   end
 
   # Before filters
-
-  def signed_in_user
-    unless signed_in?
-      store_location
-      redirect_to signin_url, notice: "Please sign in."
-    end
-  end
 
   def correct_user
     @user = User.find(params[:id])

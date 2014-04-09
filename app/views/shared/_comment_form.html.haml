@@ -1,0 +1,5 @@
+= form_for([article, @comment]) do |f|
+  = render 'shared/error_messages', object: f.object
+  .field
+    = f.text_area :content, placeholder: "Add Comment..."
+  = f.submit "Post", class: "btn btn-large btn-primary"
