@@ -25,13 +25,14 @@ namespace :db do
       users.each { |user| user.comments.create!(content: content, article_id: 1) }
     end
     Author.create!(name: "Tyler Shields")
+    Author.create!(name: "Test Author")
     #Article.create!(author_id: 1, title: "TestArticle1", published: Date.today, edited: Date.tomorrow)
     #Article.create!(author_id: 1, title: "TestArticle2", published: Date.today, edited: Date.tomorrow)
-    Article.create!(title: "ac4review", author_id:1, published: Date.yesterday, edited: Date.today)
-
+    Article.create!(title: "Review: Assassin's Creed IV: Black Flag", shortname: "ac4review", author_id: 1, published: Date.yesterday, edited: Date.today)
     12.times do |n|
-      title  = "Article-#{n+1}"
-      Article.create!(title: title, author_id: 1, published: Date.yesterday, edited: Date.today)
+      title  = "Test Article #{n+1}"
+      shortname  = "article#{n+1}"
+      Article.create!(title: title, shortname: shortname, author_id: 1, published: Date.yesterday, edited: Date.today)
     end
   end
 end
