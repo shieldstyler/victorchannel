@@ -24,7 +24,13 @@ namespace :db do
       content = Faker::Lorem.sentence(5)
       users.each { |user| user.comments.create!(content: content, article_id: 1) }
     end
-    Author.create!(name: "Example Author")
-    Article.create!(author_id: 1, title: "TestArticle1", published: Date.today, edited: Date.tomorrow)
+    Author.create!(name: "Tyler Shields")
+    Article.create!(author_id: 1, title: "Review: Assassin's Creed IV: Black Flag", published: Date.today, edited: Date.tomorrow, shortname: "ac4review")
+    6.times do |n|
+      author = 1
+      title = "Test Article #{n+1}"
+      shortname = "testarticle#{n+1}"
+      Article.create!(author_id: author, title: title, published: Date.today, edited: Date.tomorrow, shortname: shortname)
+    end
   end
 end
