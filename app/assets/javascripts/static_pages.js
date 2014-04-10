@@ -5,13 +5,13 @@
 function changeImage()
 {
 element = document.getElementById('myimage');
-if (element.src.match("assets/articles/article2.jpg"))
+if (element.src.match("articles/article2.jpg"))
   {
-  element.src = "assets/articles/article1.jpg";
+  element.src = "articles/article1.jpg";
   }
 else
   {
-  element.src = "assets/articles/article2.jpg";
+  element.src = "articles/article2.jpg";
   }
 }
 
