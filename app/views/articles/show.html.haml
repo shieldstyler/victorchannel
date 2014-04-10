@@ -4,6 +4,8 @@
 %h4 By #{@article.author.name}
 %h5 Published: #{@article.published}
 %h5 Last Updated: #{@article.edited}
+%h5 Article Shortname (To Delete): #{@article.shortname}
+
 = render "articles/article#{@article.id}"
 %h3
   Comments (#{@article.comments.count})

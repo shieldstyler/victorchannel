@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409012234) do
+ActiveRecord::Schema.define(version: 20140409205614) do
 
   create_table "articles", force: true do |t|
     t.integer  "author_id"
@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20140409012234) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "shortname"
+    t.string   "slug"
   end
 
   add_index "articles", ["author_id", "created_at"], name: "index_articles_on_author_id_and_created_at"
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
 
   create_table "authors", force: true do |t|
     t.string   "name"

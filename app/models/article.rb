@@ -6,4 +6,7 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validates :published, presence: true
   validates :edited, presence: true
+
+  extend FriendlyId
+  friendly_id :shortname, use: :slugged
 end
