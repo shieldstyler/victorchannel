@@ -21,7 +21,7 @@ body {
 }
 
 section {
-  overflow: auto;
+  //overflow: auto;
 }
 
 textarea {
@@ -193,6 +193,6 @@ aside {
   }
 }
 
-/* JS Testing */
-.slideshow { height: auto; width: auto; margin: auto }
+/* JavaScript */
+.slideshow { height: 400px; width: 400px; margin: auto }
 .slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }

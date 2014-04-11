@@ -1,12 +1,12 @@
 %header.navbar.navbar-fixed-top.navbar-inverse
   .navbar-inner
     .container
-      = link_to "VictorChannel.com", root_path, id: "logo"
+      = link_to "VictorChannel", root_path, id: "logo"
       %nav
         %ul.nav.pull-right
           %li= link_to "Home", root_path
           - if signed_in?
-            %li= link_to "Users", users_path
+            //%li= link_to "Users", users_path
             %li#fat-menu.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 Account

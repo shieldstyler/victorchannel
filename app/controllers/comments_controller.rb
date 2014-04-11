@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :signed_in_user
 
   def create
-    @article = Article.find(params[:article_id])
+    @article = Article.find_by_slug(params[:article_id])
     @comment = Comment.new(comment_params)
     @comment.article = @article
     @comment.user = current_user

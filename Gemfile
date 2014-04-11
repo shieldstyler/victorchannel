@@ -11,6 +11,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'haml', '4.0.5'
 gem 'sprockets', '2.11.0'
 gem 'friendly_id', '~> 5.0.1'
+gem 'mail', '2.5.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
