@@ -26,13 +26,37 @@ namespace :db do
     end
     Author.create!(name: "Tyler Shields")
     Author.create!(name: "Test Author")
-    #Article.create!(author_id: 1, title: "TestArticle1", published: Date.today, edited: Date.tomorrow)
-    #Article.create!(author_id: 1, title: "TestArticle2", published: Date.today, edited: Date.tomorrow)
-    Article.create!(title: "Review: Assassin's Creed IV: Black Flag", shortname: "ac4review", author_id: 1, published: Date.yesterday, edited: Date.today)
-    12.times do |n|
-      title  = "Test Article #{n+1}"
-      shortname  = "article#{n+1}"
-      Article.create!(title: title, shortname: shortname, author_id: 1, published: Date.yesterday, edited: Date.today)
-    end
+
+    Article.create!(author_id: 1,
+                    titlelong: "Assassin's Creed IV: Black Flag",
+                    titleshort: "ac4",
+                    imgprimary: "ac4.jpg",
+                    imgthumb: "ac4.jpg",
+                    published: Date.today,
+                    edited: Date.today,
+                    slug: "assassinscreed4")
+    Article.create!(author_id: 1,
+                    titlelong: "Battlefield 4",
+                    titleshort: "bf4",
+                    imgprimary: "bf4.jpg",
+                    imgthumb: "bf4.jpg",
+                    published: Date.today,
+                    edited: Date.today,
+                    slug: "battlefield4")
+    Article.create!(author_id: 1,
+                    titlelong: "Madden NFL 25",
+                    titleshort: "m25",
+                    imgprimary: "m25.jpg",
+                    imgthumb: "m25.jpg",
+                    published: Date.today,
+                    edited: Date.today,
+                    slug: "madden25")
   end
 end
+
+
+#12.times do |n|
+#  title  = "Test Article #{n+1}"
+#  shortname  = "article#{n+1}"
+#  Article.create!(title: title, shortname: shortname, author_id: 1, published: Date.yesterday, edited: Date.today)
+#end

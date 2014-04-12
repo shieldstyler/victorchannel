@@ -1,10 +1,10 @@
-- provide(:title, @article.title)
+- provide(:title, @article.titlelong)
 
-%h3 #{@article.title}
+%h3 #{@article.titlelong}
 %h4 By #{@article.author.name}
 %h5 Published: #{@article.published}
 %h5 Last Updated: #{@article.edited}
-%h5 Article Shortname (To Delete): #{@article.shortname}
+
 
 = render "articles/article#{@article.id}"
 %h3

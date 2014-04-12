@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409205614) do
+ActiveRecord::Schema.define(version: 20140412095634) do
 
   create_table "articles", force: true do |t|
     t.integer  "author_id"
-    t.string   "title"
     t.datetime "published"
     t.datetime "edited"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "shortname"
     t.string   "slug"
+    t.string   "titlelong"
+    t.string   "titleshort"
+    t.string   "imgprimary"
+    t.string   "imgthumb"
   end
 
   add_index "articles", ["author_id", "created_at"], name: "index_articles_on_author_id_and_created_at"
