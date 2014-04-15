@@ -13,7 +13,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  padding-top: 45px;
+  padding-top: 38px;
   background-color: #222222;
 
 }
@@ -34,6 +34,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  color: #eae9c3;
 }
 h1 {
   font-size: 3em;
@@ -47,7 +48,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: #eae9c3;
 }
 p {
   font-size: 1.2em;
@@ -65,6 +66,8 @@ p {
   width: 100%;
   height: 38px;
   z-index: 9;
+  border-bottom: 3px;         //???
+  border-color: #555555;      //???
   .container {
     width: 70%;
     margin: 0 auto;
@@ -98,6 +101,7 @@ p {
 
 /* sidebar */
 
+
 .sidebar {
   float: left;
   min-height: 100%;
@@ -110,26 +114,43 @@ p {
   border-right: 2px;
   border-color: white;
   z-index: 8;
-  ul {
-    display: block;
-    text-align: left;
-    list-style-type: none;
-    }
   h2 {
     font-size: 22px;
-    color: #005580;
+    color: #eae9c3;
+  }
+  ul {
+    //display: block;
+    text-align: center;
+    list-style-type: none;
+    color: #eae9c3;
   }
 }
+
+.rightbar {
+  width: 5px;
+  background-color: #555555;
+  border-left: 2px;
+  border-right: 2px;
+  border-color: black;
+  min-height: 1000px;
+  //margin-right: 150px;
+  position: fixed;
+  right: 150px;
+
+  z-index: -8;
+}
+
 
 /* mainbody */
 
 .mainbody {
   float: left;
-  margin-top: 8px;
+  //margin-top: 8px;
+  padding-bottom: 40px;
   position: relative;
-  left: 240px;
+  left: 215px;
   //background-color: #555555;
-  width: 72%;
+  width: 70%;
   z-index: -9;
   min-height: 100% ;
 }
@@ -149,7 +170,7 @@ footer {
   margin-top: 5px;
 }
 footer a {
-  color: #555;
+  //olor: #555;
 }
 footer a:hover {
   color: whitesmoke;
@@ -210,6 +231,7 @@ input {
 .comments {
   list-style: none;
   margin: 10px 0 0 0;
+  color: #eae9c3;
 
   li {
     padding: 10px 0;
@@ -246,4 +268,11 @@ aside {
   //padding: 15px;
   border: 1px solid #ccc;
   background-color: #eee;
+}
+
+/* articles */
+
+.articlethumb {
+  color: white;
+  text-align: center;
 }

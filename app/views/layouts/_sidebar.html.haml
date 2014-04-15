@@ -1,10 +1,14 @@
 .sidebar
-  %h2 Articles
+  %h2 Recent Articles
+  //=render 'shared/articlethumb', article: Article.find(1)
+  %ul.articlethumb
+    - articles.each do |article|
+      //%li= image_tag("articles/#{article.imgthumb}", link_to (articles_path, :id => article.slug))
+      //%li= link_to(image_tag("articles/#{article.imgthumb}") root_path)
+      %li
+        = link_to( image_tag("articles/#{article.imgthumb}"), article_path(article.slug))
+      %li #{article.titlelong}
+      %li #{article.published.strftime("%m/%d/%Y")}
+      %br
 
-
-
-
-//  %ul
-//    - Article.all.each do |article|
-//      %li
-//        =link_to article.title, article
+    //  = link_to(image_tag("background.jpg") "/")
