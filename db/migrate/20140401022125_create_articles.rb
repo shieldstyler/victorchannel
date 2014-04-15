@@ -3,7 +3,6 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.integer :author_id
       t.string :title
-      t.string :shortname
       t.datetime :published
       t.datetime :edited
 
