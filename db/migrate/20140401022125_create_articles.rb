@@ -9,6 +9,6 @@ class CreateArticles < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :articles, [:author_id, :created_at, :slug]
+    add_index :articles, [:author_id, :created_at]
   end
 end
