@@ -9,12 +9,11 @@
     = render 'layouts/shim'
   %body
     = render 'layouts/header'
-    = render 'layouts/sidebar'
-    .mainbody
-      - flash.each do |key, value|
-        %div{class: "alert alert-#{key}"}= value
-      = yield
-    .rightbar
-      %p
+    .centerbody
+      = render 'layouts/sidebar'
+      .mainbody
+        - flash.each do |key, value|
+          %div{class: "alert alert-#{key}"}= value
+        = yield
     = render 'layouts/footer'
     //= debug(params) if Rails.env.development?
